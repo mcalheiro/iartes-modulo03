@@ -18,11 +18,14 @@ def main():
             print(f'Email invalido: {msg1}')
         if not result2:
             print(f'CPF invalido: {msg2}')
-        else:
+        if result1 and result2:
             entrada = {'email': email, 'cpf': cpf}
             base_dados.append(entrada)
 
-    print(base_dados)
+    if base_dados:
+        print(base_dados)
+    else:
+        print('Base de dados vazia. Todas as entradas possuem algum dado invalido')
 
 
 if __name__ == "__main__":
