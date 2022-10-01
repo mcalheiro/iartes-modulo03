@@ -57,19 +57,28 @@ class Heroi(Personagem):
     def nivel(self, nivel_personagem):
         self._nivel = nivel_personagem
 
-    def atacar(self):
-        return f'{self.nome} atacou.'
+    def atacar(self, sucesso):
+        if sucesso in range(6, 11):
+            return f'{self.nome} atacou.'
+        else:
+            return 'Ataque sem efeito.'
 
-    def defender(self):
-        return f'{self.nome} defendeu.'
+    def defender(self, sucesso):
+        if sucesso in range(7, 11):
+            return f'{self.nome} defendeu.'
+        else:
+            return 'Tentativa de defesa falha.'
 
-    def fugir(self):
-        return f'{self.nome} fugiu da luta.'
+    def fugir(self, sucesso):
+        if sucesso in range(8, 11):
+            return f'{self.nome} fugiu da luta.'
+        else:
+            return 'Impossível fugir.'
 
 
 class Guerreiro(Heroi):
     """
-    Possui todos os atrivutos de Personagem e Heroi + arma e HP
+    Possui todos os atributos de Personagem e Heroi + arma e HP
     Pode evoluir nivel e equipar outras armas.
     Arma padrao: espada
     HP padrao: 100
