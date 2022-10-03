@@ -7,12 +7,18 @@ class Personagem(ABC):
     Possui nome e nivel.
     Pode atacar ou defender.
     """
-    def __init__(self, nome: str, nivel: int):
+    def __init__(self, nome: str):
         self.nome = nome
-        self.nivel = nivel
+        self.nivel = 1
 
     @abstractmethod
-    def atacar(self) -> None: pass
+    def lutar(self, inimigo, acao) -> None: pass
 
     @abstractmethod
-    def defender(self) -> None: pass
+    def mover(self, pos_x, pos_y) -> None: pass
+
+    @abstractmethod
+    def atacar(self, inimigo, sucesso) -> None: pass
+
+    @abstractmethod
+    def defender(self, inimigo, sucesso) -> None: pass
