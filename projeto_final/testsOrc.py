@@ -6,7 +6,7 @@ from guerreiro import Guerreiro
 
 @pytest.fixture
 def orc():
-    orc = Orc('comum', 'Baldur', 5)
+    orc = Orc('comum', 'Baldur', 'comandante', 5)
     return orc
 
 
