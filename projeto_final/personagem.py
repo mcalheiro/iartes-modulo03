@@ -2,11 +2,6 @@ from abc import ABC, abstractmethod
 
 
 class Personagem(ABC):
-    """
-    Classe abstrata.
-    Possui nome e nivel.
-    Pode atacar ou defender.
-    """
     def __init__(self, nome: str):
         self.nome = nome
         self.nivel = 1
